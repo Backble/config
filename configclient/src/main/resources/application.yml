@@ -1,0 +1,22 @@
+server:
+  port: 8082
+
+spring:
+  config:
+    import: "optional:configserver:http://localhost:8081/"
+  cloud:
+    config:
+      name: bbl
+      profile: career, common, eureka, gateway, member, payment
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
+
+#Config Server에서 설정된 GitHub에 bbl-career.yml
+
+
+#GitHub Repository에 설정 파일이 업데이트 될때마다 actuator로 갱신 요청 필요.
+#>>gitHub Action을 사용해 자동으로 Client Server에 설정 정보를 갱신하도록 구축 가능
