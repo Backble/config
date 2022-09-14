@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  cloud:
+    config:
+      server:
+
+        git:
+          uri: https://github.com/Backble/popool.git  #최종적으로 돌릴 때 local git 주소로 바꿔야함!
+          default-label: develop
+
+          # native:
+          # search-locations: file://${user.home}/외부-설정-파일-경로
