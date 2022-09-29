@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build-eureka:
+  build-config:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -22,8 +22,8 @@ jobs:
         run: chmod +x ./configserver/gradlew #setting
         shell: bash
 
-      - name: Build Eureka with Gradle
-        run: ./configserver/gradlew clean --exclude-task test
+      - name: Build configserver with Gradle
+        run: ./configserver/gradlew clean
         shell: bash
 
       - name: Get current time
