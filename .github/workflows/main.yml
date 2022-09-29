@@ -23,7 +23,7 @@ jobs:
         shell: bash
 
       - name: Build Eureka with Gradle
-        run: ./configserver/gradlew clean :configserver:build --exclude-task test --warning-mode all #setting
+        run: ./configserver/gradlew clean --exclude-task test
         shell: bash
 
       - name: Get current time
